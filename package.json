@@ -1,0 +1,20 @@
+{
+  "name": "project-a11y",
+  "version": "1.0.0",
+  "description": "Run accessibility tests against your project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cypress-axe",
+    "accessibility"
+  ],
+  "author": "manpreet",
+  "license": "MIT",
+  "devDependencies": {
+    "axe-core": "4.3.3",
+    "cypress": "8.6.0",
+    "cypress-axe": "0.13.0"
+  }
+}
