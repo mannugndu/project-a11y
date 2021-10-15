@@ -15,5 +15,5 @@ jobs:
           cache: "npm"
       - name: start test execution
         run: |
-        npm i
-        npx cypress run
+         npm i
+         npx cypress run
