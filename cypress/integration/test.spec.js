@@ -42,4 +42,16 @@ describe("[Test Accessibility for {PAGE} and {URL}]", () => {
       context: "a",
     });
   });
+
+  it("Run audit on allLinks but skip contrast", () => {
+    cy.runAudit({
+      skipFailure: true,
+      context: "a",
+      options: {
+        rules: {
+          "color-contrast": { enabled: false },
+        },
+      },
+    });
+  });
 });
