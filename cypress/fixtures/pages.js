@@ -12,11 +12,11 @@ const partialDefaults = () => ({
 });
 
 const pageData = {
-    home:{
-        url:'',
-        locators:{}
-    }
-}
+  home: {
+    url: "",
+    locators: {},
+  },
+};
 
 export default {
   home: {

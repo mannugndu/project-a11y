@@ -1,4 +1,4 @@
-# context 
+# context
 
 {
 include: [['#header'], ['a'], ['#frame1', '#frame2', '#fix']]
