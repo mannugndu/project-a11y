@@ -1,5 +1,3 @@
-# Do not create pages/tests with same name
-
 # context
 
 {
