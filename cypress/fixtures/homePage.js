@@ -7,6 +7,7 @@ const homePage = {
       name: "navbar",
       include: [["nav.navbar"]],
       rules: { "color-contrast": { enabled: false } },
+      skipFailure: true,
     },
   ],
 };
