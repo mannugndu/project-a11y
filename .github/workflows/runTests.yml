@@ -17,7 +17,7 @@ jobs:
         run: |
           npm i
           echo "===================="
-          echo pwd
+          pwd
           echo "======================="
-          echo ls
+          ls
           npm run test
