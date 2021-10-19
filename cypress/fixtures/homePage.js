@@ -2,6 +2,9 @@ const urls = require("./urls");
 const homePage = {
   name: "home page",
   url: urls.homePage,
+  fullScan: {
+    skipFailure: true,
+  },
   partialScan: [
     {
       name: "navbar",

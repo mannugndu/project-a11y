@@ -35,7 +35,7 @@ describe("[Test Accessibility on page: '{{name}}' and url: '{{url}}']",()=>{
         {{#isRuleAvailable this.rules}}rules:{ {{#each this.rules}} '{{@key}}':{ {{#each this}}{{@key}}: {{this}} }, {{/each}}{{/each}} } {{/isRuleAvailable}}
         },
         {{/codeOptions}}      
-        {{#if this.skipFailures}}skipFailure: true,{{/if}}
+        {{#if this.skipFailure}}skipFailure: true,{{/if}}
       });       
     })
   {{/each}}
