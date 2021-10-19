@@ -1,4 +1,6 @@
-# context 
+# Do not create pages/tests with same name
+
+# context
 
 {
 include: [['#header'], ['a'], ['#frame1', '#frame2', '#fix']]

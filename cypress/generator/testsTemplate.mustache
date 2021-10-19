@@ -1,0 +1,45 @@
+describe("[Test Accessibility on page: '{{name}}' and url: '{{url}}']",()=>{
+
+  before(() => {
+     cy.visit("{{url}}");
+     cy.injectAxe();
+   });
+ 
+ {{#codeFullScan fullScan}}
+    it("Run audit on full page",()=>{
+      cy.runAudit({      
+        {{#if this.fullScan.skipFailure}}skipFailure: true,{{/if}}
+        {{#codeOptions this.fullScan.runOnly this.fullScan.rules}}
+          options: {
+          {{#if this.fullScan.runOnly.length}}runOnly:[{{#each this.fullScan.runOnly}}'{{this}}',{{/each}}],{{/if}}
+        {{#isRuleAvailable this.fullScan.rules}}rules:{ {{#each this.fullScan.rules}} '{{@key}}':{ {{#each this}}{{@key}}: {{this}} }, {{/each}}{{/each}} } {{/isRuleAvailable}}
+          }
+        {{/codeOptions}}       
+      });       
+    })
+ {{/codeFullScan}}
+ 
+ {{#if partialScan.length}}
+  {{#each partialScan}}
+    it("Run audit on '{{this.name}}'",()=>{
+      cy.runAudit({    
+        {{#codeContext this.include this.exclude}} 
+        context: {    
+        {{#if this.include.length}}include: [{{#each this.include}}[{{#each this}}'{{this}}',{{/each}}],{{/each}}],{{/if}}
+        {{#if this.exclude.length}}exclude: [{{#each this.exclude}}[{{#each this}}'{{this}}',{{/each}}],{{/each}}]{{/if}}
+        }, 
+        {{/codeContext}}
+        {{#codeOptions this.runOnly this.rules}}
+        options: {
+        {{#if this.runOnly.length}}runOnly:[{{#each this.runOnly}}'{{this}}',{{/each}}],{{/if}}
+        {{#isRuleAvailable this.rules}}rules:{ {{#each this.rules}} '{{@key}}':{ {{#each this}}{{@key}}: {{this}} }, {{/each}}{{/each}} } {{/isRuleAvailable}}
+        },
+        {{/codeOptions}}      
+        {{#if this.skipFailures}}skipFailure: true,{{/if}}
+      });       
+    })
+  {{/each}}
+ {{/if}}
+ })
+ 
+ 

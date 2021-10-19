@@ -76,7 +76,7 @@ Cypress.Commands.add(
         });
       });
     }
-console.log(options)
+    console.log("options===>", context);
     cy.checkA11y(context, options, callback, skipFailure);
   }
 );
