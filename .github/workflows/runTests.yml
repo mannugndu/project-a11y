@@ -16,4 +16,8 @@ jobs:
       - name: start test execution
         run: |
           npm i
+          echo "===================="
+          echo pwd
+          echo "======================="
+          echo ls
           npm run test
