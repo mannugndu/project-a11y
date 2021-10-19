@@ -33,8 +33,11 @@ const source = fs.readFileSync(
 const template = Handlebars.compile(source);
 
 const getTestsDir = () => {
-  const directory = path.join(__dirname, "../integration/a11yTests");
-
+  const integrationDir = path.join(__dirname, "../integration");
+  if (!fs.existsSync(integrationDir)) {
+    fs.mkdirSync(integrationDir);
+  }
+  const directory = path.join(integrationDir, "/a11yTests");
   if (!fs.existsSync(directory)) {
     fs.mkdirSync(directory);
   }

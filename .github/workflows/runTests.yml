@@ -15,9 +15,5 @@ jobs:
           cache: "npm"
       - name: start test execution
         run: |
-          npm i
-          echo "===================="
-          pwd
-          echo "======================="
-          ls
+          npm i         
           npm run test
