@@ -1,6 +1,7 @@
 const urls = require("./urls");
 const homePage = {
   name: "home page",
+  preScript:'commonTasks.js',
   url: urls.homePage,
   fullScan: {
     skipFailure: true,

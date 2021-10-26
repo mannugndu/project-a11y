@@ -1,6 +1,7 @@
 describe("[Test Accessibility on page: '{{name}}' and url: '{{url}}']",()=>{
 
   before(() => {
+    {{#runPreScript this.preScript}} require("../../preScripts/{{this.preScript}}");  {{/runPreScript}}  
      cy.visit("{{url}}");
      cy.injectAxe();
    });
