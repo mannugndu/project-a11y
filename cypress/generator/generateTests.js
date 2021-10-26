@@ -7,6 +7,10 @@ const generatorConfig = require("./generatorConfig");
 
 console.log(chalk.green("Generating Test Files..."));
 
+Handlebars.registerHelper("runPreScript", function (preScript, options) {
+  if (preScript && preScript.length > 0) return options.fn(this);
+  else return options.inverse(this);
+});
 Handlebars.registerHelper("codeFullScan", function (fullScan, options) {
   if (fullScan && fullScan.enabled === false) return options.inverse(this);
   else return options.fn(this);
@@ -58,6 +62,7 @@ Object.keys(urls).forEach((page) => {
         template({
           name: page,
           url: urls[page],
+          preScript: generatorConfig.preScript,
           fullScan: {
             skipFailure: generatorConfig.skipFailure ? true : false,
             runOnly:
