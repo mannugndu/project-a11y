@@ -1,1 +1,1 @@
-console.log('Write your Prescripts here')
+console.log('Write your Prescripts here');

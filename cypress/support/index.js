@@ -1,2 +1,2 @@
-import "./commands";
-import "cypress-axe";
+require('./commands');
+require('cypress-axe');
