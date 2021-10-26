@@ -1,5 +1,5 @@
 const generatorConfig = {
-  skipFailure: true,
+	skipFailure: true,
 };
 
 module.exports = generatorConfig;
