@@ -1,3 +1,5 @@
 a11y-workspace.code-workspace
 node_modules
 cypress/integration/a11yTests
+cypress/report
+cypress/screenshots

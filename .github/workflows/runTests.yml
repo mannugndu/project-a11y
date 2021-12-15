@@ -22,3 +22,6 @@ jobs:
       - name: start test execution
         run: |
           npm run test
+      - name: Print the event that triggered the execution
+        run: |
+          echo "The event name is ===> ${{ github.event }}"

@@ -1,0 +1,8 @@
+name: Reusing Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    uses: mannugndu/project-a11y/.github/workflows/runTests.yml@v1

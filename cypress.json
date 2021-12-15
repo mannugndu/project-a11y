@@ -1,5 +1,12 @@
 {
   "baseUrl": "https://example.cypress.io",
   "video": false,
-  "screenshotOnRunFailure": false
+  "screenshotOnRunFailure": true,
+  "reporter": "cypress-mochawesome-reporter",
+  "reporterOptions": {
+    "reportDir": "cypress/report",
+    "charts": true,
+    "reportPageTitle": "Accessibility Test Report",
+    "embeddedScreenshots":true
+  }
 }
