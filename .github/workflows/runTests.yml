@@ -1,6 +1,6 @@
 name: Execute Tests
 
-on: push
+on: [push, workflow_dispatch]
 
 jobs:
   Execution:
@@ -17,7 +17,7 @@ jobs:
         run: |
           npm i
       - name: run eslint
-        run: |          
+        run: |
           npm run lint
       - name: start test execution
         run: |
