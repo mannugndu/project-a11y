@@ -24,4 +24,4 @@ jobs:
           npm run test
       - name: Print the event that triggered the execution
         run: |
-          echo "The event name is ===> ${{ github.event }}"
+          echo "The event name is ===> ${{ github.event_name }}"
